@@ -80,11 +80,8 @@
   <ItemGroup>
     <ClCompile Include="BSTClosestLeafDistance.cpp" />
     <ClCompile Include="BSTRows.cpp" />
-    <ClCompile Include="BSTTransversals.cpp" />
     <ClCompile Include="FixBST.cpp" />
-    <ClCompile Include="HeightofBST.cpp" />
     <ClCompile Include="MainBST.cpp" />
-    <ClCompile Include="SortedArraytoBST.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FunctionHeadersBST.h" />
