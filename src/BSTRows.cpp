@@ -22,21 +22,13 @@ Note : Return -1 for Invalid Cases .
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "FunctionHeadersBST.h"
 struct node{
 	struct node * left;
 	int data;
 	struct node *right;
 };
-int max1(int a, int b)
-{
-	return (a > b ? a : b);
-}
-int get_height1(struct node *root){
-	if (root == NULL)return 0;
-	int leftHeight = get_height1(root->left);
-	int rightHeight = get_height1(root->right);
-	return 1 + max1(leftHeight, rightHeight);
-}
+
 int getNoOfNodes(struct node * root)
 {
 	if (root == NULL)return 0;
@@ -61,33 +53,17 @@ void addToArray(struct node* root, int * arr, int * index, int level)
 int* BSTRighttoLeftRows(struct node* root)
 {
 	if (root == NULL)return NULL;
-	int height = get_height1(root),cnt=getNoOfNodes(root);
+	int height = get_height(root),cnt=getNoOfNodes(root);
 	int *arr=(int *)malloc(sizeof(int)*cnt),i,j,index=0,rear=0,front=0;
 	for (i = 0; i < height; i++)
-	{
 		addToArray(root, arr, &index,i);
-	}
 	return arr;
 }
 /*
 
-int max1(int a, int b)
-{
-	return (a > b ? a : b);
-}
-int get_height1(struct node *root){
-	if (root == NULL)return 0;
-	int leftHeight = get_height1(root->left);
-	int rightHeight = get_height1(root->right);
-	return 1 + max1(leftHeight, rightHeight);
-}
-int getNoOfNodes(struct node * root)
-{
-	if (root == NULL)return 0;
-	int left = getNoOfNodes(root->left);
-	int right = getNoOfNodes(root->right);
-	return 1 + left + right;
-}
+Method-----2;;;;;;
+
+
 int* BSTRighttoLeftRows(struct node* root)
 {
 	if (root == NULL)return NULL;

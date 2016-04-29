@@ -18,13 +18,22 @@
     <ClCompile Include="MainBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BSTRows.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FixBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BSTClosestLeafDistance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTRows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTTransversals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HeightofBST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortedArraytoBST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
