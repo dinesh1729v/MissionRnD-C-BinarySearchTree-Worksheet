@@ -38,8 +38,53 @@ struct node{
   int data;
   struct node *right;
 };
+int min(int a, int b)
+{
+	if (a == -1)return b;
+	if (b == -1)return a;
+	return (a < b ? a : b);
+}
 
+struct node* findParent(struct node* root, struct node *temp){
+
+	if (root == NULL)	return NULL;
+
+	if ((root->left != NULL) && (root->left->data == temp->data))
+		return root;
+	if ((root->right != NULL) && (root->right->data == temp->data))
+		return root;
+	if (root->left != NULL)
+		return findParent(root->left, temp);
+	if (root->right != NULL)
+		return findParent(root->right, temp);
+
+	return NULL;
+}
+int getMinHeight(struct node *root)
+{
+	if (root == NULL)return -1;
+	if (root->left == NULL && root->right == NULL)return 0;
+	int leftHeight = getMinHeight(root->left);
+	int rightHeight = getMinHeight(root->right);
+	return 1 + min(leftHeight, rightHeight);
+}
 int get_closest_leaf_distance(struct node *root, struct node *temp)
 {
-  return -1;
+	if (root == NULL || temp == NULL)
+		return -1;
+	int minHeight = getMinHeight(temp);
+	if (minHeight==1)
+		return minHeight;
+
+	struct node* parent = findParent(root, temp);
+
+	if (parent != NULL){
+		int parentDist = get_closest_leaf_distance(root, parent);
+
+		int minDist = min(parentDist, minHeight);
+
+		if (minDist == parentDist)
+			return 1 + parentDist;
+	}
+	return minHeight;
 }

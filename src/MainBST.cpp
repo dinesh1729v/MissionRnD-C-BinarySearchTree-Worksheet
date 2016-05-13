@@ -42,10 +42,33 @@ struct node * add_node_spec(struct node *root, int data){
 	return root;
 }
 
+
 int main(){
 
 	//Use it for testing ,Creating BST etc
+	/*struct node *root = newNode(2);
+	root->left = newNode(1);
+	root->right = newNode(3);
+	root->right->right = newNode(14);
+	root->right->right->left = newNode(9);
+	root->right->right->left->left = newNode(6);
+	root->right->right->right = newNode(20);
+	root->right->right->right->right = newNode(20);
+	int dist = get_closest_leaf_distance(root, root->right->right->right->right);
+	printf("\n%d  ", dist);*/
+	int nums[10] = { 2, 1, 4, 3 };
 	struct node *root = NULL;
+	for (int i = 0; i < 4; i++){
+		root = add_node_spec(root, nums[i]);
+	}
+	printf("%d", get_closest_leaf_distance(root,root));
+	getchar();
+	return 0;                
+}
+/*
+fixbst
+
+struct node *root = NULL;
 	int nums[20] = { 50, 25, 75, 15, 35, 90, 5, 17, 45, 120, 1, 2, 19, 39, 49, 100 };
 
 	for (int i = 0; i < 16; i++){
@@ -61,6 +84,6 @@ int main(){
 	swap_nodes(swaplist[0], swaplist[1]);
 
 	fix_bst(root);
-	getchar();
-	return 0;
-}
+
+
+*/
